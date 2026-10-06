@@ -20,5 +20,8 @@ comidas.forEach((comida)=>{
   container.innerHTML += 
   '<section class="producto">'+
   '<h2>'+comida.nombre+'</h2>'+
+  '<h3>'+comida.categoria+'</h3>'+
+  '<p class="ingredientes">'+comida.provincia+'</p>'+
+  '<p class="provincia">'+comida.ingredientes + '</p>'
   '</section>'
 })
