@@ -1,39 +1,78 @@
 *{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0px;
 }
+
 
 .comida-container {
-  background-color: #f7f5f0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+background-color: #f7f5f0;
+width: 100vw;
+min-height: 100vh;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-evenly;
 }
 
+
+.addFood {
+width: 100vw;
+min-height: 5vh;
+background-color: #f7ce82;
+border: .5rem solid #f1b74b;
+display: flex;
+justify-content: center;
+}
+
+
 .producto {
-  margin: 0.3rem;
-  padding-bottom: 2rem;
-  border: .5rem solid #f7ce82;
-  border-radius: .7rem;
-  background-color: #f8eedc;
-  width: 17.5vw;
-  height: 45vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
+box-shadow: 0.1rem 0.1rem .1rem #b3935a;
+margin: 0.3rem;
+padding-bottom: 2rem;
+border: .5rem solid #f7ce82;
+border-radius: .7rem;
+background-color: #f8eedc;
+width: 17.5vw;
+min-height: 45vh;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+align-items: center;
 }
 
 h2 {
-  font-size: 1.3rem;
-  font-weight: bold;
-  text-align: center;
+font-size: 1.7rem;
+font-weight: bold;
+text-align: center;
 }
 
+
 h3 {
-  font-size: .8rem;
-  font-weight: lighter;
+font-size: 1.2rem;
+font-weight: semi-bold;
+}
+
+
+p {
+padding: .1rem;
+font-size: 0.8rem;
+border: .2rem solid #ffa600;
+border-radius: 1rem;
+}
+
+
+ul {
+list-style-type: none;
+padding: 0.2rem;
+display: flex;
+flex-wrap: wrap;
+}
+
+
+li {
+box-shadow: 0.1rem 0.1rem .1rem #b3935a;
+margin: 0.2rem;
+padding: 0.1rem;
+border: .3rem solid #f7ce82;
+border-radius: 0.3rem;
 }
