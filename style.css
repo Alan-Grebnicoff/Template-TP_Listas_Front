@@ -8,7 +8,7 @@
 .comida-container {
 background-color: #f7f5f0;
 width: 100vw;
-min-height: 100vh;
+min-height: 50vh;
 display: flex;
 flex-wrap: wrap;
 justify-content: space-evenly;
@@ -33,7 +33,7 @@ border: .5rem solid #f7ce82;
 border-radius: .7rem;
 background-color: #f8eedc;
 width: 17.5vw;
-min-height: 45vh;
+height: 45vh;
 display: flex;
 flex-direction: column;
 justify-content: space-evenly;

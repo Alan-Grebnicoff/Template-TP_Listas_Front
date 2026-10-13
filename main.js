@@ -9,7 +9,7 @@ fetch('./data/comidas.json')          // Ruta al archivo JSON
     console.log('Comidas cargadas desde JSON:');
     console.log(data);    
     comidas = data;                   // Asignar el JSON a la variable comidas
-    mostrarComidas()
+    mostrarComidas(comidas)
   })
   .catch(error => {                   // Manejo de errores al leer el archivo JSON
     console.error('Error al leer el archivo JSON:', error);
@@ -20,9 +20,9 @@ let comidas = [];
 
 
 const container = document.getElementById('comidaContainer');
-function mostrarComidas () {
+function mostrarComidas (lista) {
 container.innerHTML = ""
-comidas.forEach((comida)=>{
+lista.forEach((comida)=>{
   container.innerHTML +=
 `
   <section class="producto">
@@ -56,4 +56,14 @@ formAgregarComida.addEventListener("submit", (event) => {
  mostrarComidas(comidas)
 
  event.target.reset()
+})
+
+const filtrarCategoria=document.getElementById("filtrarCategoria")
+
+filtrarCategoria.addEventListener("change", () => {
+  let comidasFiltradas = comidas.filter(comida => {
+    return comida.categoria.includes(filtrarCategoria.value)
+  })
+
+  mostrarComidas(comidasFiltradas)
 })
