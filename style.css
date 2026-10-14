@@ -4,6 +4,15 @@
   padding: 0px;
 }
 
+.filtros {
+width: 100vw;
+min-height: 5vh;
+padding: .5rem;
+background-color: #f7ce82;
+border: .5rem solid #f1b74b;
+display: flex;
+justify-content: space-around;
+}
 
 .comida-container {
 background-color: #f7f5f0;
@@ -24,6 +33,13 @@ display: flex;
 justify-content: center;
 }
 
+.unFiltro {
+  box-shadow: 0.1rem 0.1rem .1rem #c0923b;
+  border: .3rem solid #f1b74b;
+  border-radius: .4rem;
+  background-color: #f8eedc;
+  padding: .3rem;
+}
 
 .producto {
 box-shadow: 0.1rem 0.1rem .1rem #b3935a;
@@ -39,6 +55,8 @@ flex-direction: column;
 justify-content: space-evenly;
 align-items: center;
 }
+
+
 
 h2 {
 font-size: 1.7rem;
