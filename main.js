@@ -10,6 +10,7 @@ fetch('./data/comidas-extended.json')          // Ruta al archivo JSON
     console.log(data);    
     comidas = data;                   // Asignar el JSON a la variable comidas
     mostrarComidas(comidas)
+    actualizarFiltros()
   })
   .catch(error => {                   // Manejo de errores al leer el archivo JSON
     console.error('Error al leer el archivo JSON:', error);
@@ -46,16 +47,28 @@ formAgregarComida.addEventListener("submit", (event) => {
   event.preventDefault() //El formulario tiene un comportamiento que no nos sirve
 
  // alert("Comida agregada: " + event.target.nombre.value) //El evento fue disparado por el formulario
+
+ const ingredientesInputs= document.querySelectorAll(".ingrediente")
+ let ingredientes = []
+ ingredientesInputs.forEach(input => {
+  ingredientes.push(input.value)
+ })
+
  let nuevaComida= {
   nombre: event.target.nombre.value,
   provincia: event.target.provincia.value,
   categoria: event.target.categoria.value,
-  ingredientes: event.target.ingredientes.value.split(",")
+  ingredientes: ingredientes
  }
 
  comidas.push(nuevaComida)
 
  mostrarComidas(comidas)
+
+ ingredientesContainer.innerHTML=
+  `<input type="text" id="ingredientes" class="ingrediente" placeholder="Pon los ingredientes" required>`
+
+  actualizarFiltros()
 
  event.target.reset()
 })
@@ -83,6 +96,35 @@ function buscar () {
   mostrarComidas(comidasFiltradas)
 }
 
+const botonIngredientes = document.getElementById("boton-ingredientes")
+const ingredientesContainer = document.querySelector(".contenedor-ingredientes") //El primero que ve de esa clase
+
+botonIngredientes.addEventListener("click", () => {
+  ingredientesContainer.innerHTML+=
+  `<input type="text" id="ingredientes" class="ingrediente" placeholder="Pon los ingredientes" required>`
+})
+
 filtrarCategoria.addEventListener ("change", filtrar)
 filtrarProvincia.addEventListener("change", filtrar)
 busqueda.addEventListener("input", buscar)
+
+
+function actualizarFiltros () {
+  let categorias = []
+  let provincias = []
+  comidas.forEach(comida =>{
+    if (!categorias.includes(comida.categoria)) {
+      categorias.push(comida.categoria)
+    }
+    if (!provincias.includes(comida.provincia)) {
+      provincias.push(comida.provincia)
+    }
+  })
+
+  categorias.forEach (categoria => {
+    filtrarCategoria.innerHTML += `<option value="${categoria}">${categoria}</option>`
+  })
+  provincias.forEach (provincia => {
+    filtrarProvincia.innerHTML += `<option value="${provincia}">${provincia}</option>`
+  })
+}

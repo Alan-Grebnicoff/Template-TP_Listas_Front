@@ -11,20 +11,9 @@
     <input type="search" id="buscador" placeholder="Busca utilizando texto" class="unFiltro">
       <select id="filtrarCategoria" class="unFiltro">
         <option value="">Todas las categorías</option>
-        <option value="Parrilla">Parrilla</option>
-        <option value="Horno">Horno</option>
-        <option value="Frito">Frito</option>
-        <option value="Guiso">Guiso</option>
       </select>
       <select id="filtrarProvincia" class="unFiltro">
         <option value="">Todas las provincias</option>
-        <option value="Buenos Aires">Buenos Aires</option>
-        <option value="Tucumán">Tucumán</option>
-        <option value="Salta">Salta</option>
-        <option value="Jujuy">Jujuy</option>
-        <option value="Córdoba">Córdoba</option>
-        <option value="Santa Fe">Santa Fe</option>
-        <option value="Entre Ríos">Entre Ríos</option>
       </select>
     </header>
 
@@ -45,7 +34,10 @@
         <label for="categoria">¿Cuál es su categoría?</label>
         <input type="text" id="categoria" placeholder="Pon una categoría" required>
         <label for="ingredientes">¿Cuáles son sus ingredientes (separados por comas)?</label>
-        <input type="text" id="ingredientes" placeholder="Pon los ingredientes">
+        <div class="contenedor-ingredientes">
+        <input type="text" class="ingrediente" id="ingredientes" placeholder="Pon los ingredientes" required>
+        </div>
+        <button type="button" id="boton-ingredientes">Agregar ingredientes</button>
         <button type="submit">Agregar</button>
        </form>
     </section>
